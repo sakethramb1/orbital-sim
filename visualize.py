@@ -147,7 +147,7 @@ def animate_orbit(position, velocity, orbit_type, dt=10):
         t   = idx * dt / 60
 
         energy      = orbital_energy(pos, vel)
-        energy_drift = abs(energy - initial_energy) / abs(initial_energy) * 100
+        energy_drift = abs(energy - initial_energy) / abs(initial_energy) * 100 # howmuch energy has been lost, should be very tiny percent
 
         apo_alt  = (distances[apo_idx]  - R_EARTH) / 1000
         peri_alt = (distances[peri_idx] - R_EARTH) / 1000
