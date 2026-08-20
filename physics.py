@@ -41,7 +41,7 @@ def rk4_step(position, velocity, dt):
     after time dt (in seconds).
     """
     # K1 — slope at current point
-    k1_v = acceleration(position) #basically v'
+    k1_v = acceleration(position) #basically v', what are the derivatives right now?
     k1_r = velocity #basically r'
 
     # K2 — slope at midpoint using k1

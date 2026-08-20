@@ -94,7 +94,7 @@ if __name__ == "__main__":
     orbit_type               = print_mission_summary(altitude_m, velocity_ms)
     position, velocity       = setup_initial_conditions(altitude_m, velocity_ms)
 
-    print(f"  Launching simulation...\n")
+    print(f"  Launching simulation now...\n")
 
     from visualize import animate_orbit
     ani = animate_orbit(position, velocity, orbit_type)
