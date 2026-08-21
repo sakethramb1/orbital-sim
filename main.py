@@ -46,10 +46,12 @@ def classify_orbit(velocity_ms, altitude_m):
     """Thiss will tell the user what kind of trajectory they have entered."""
     circ_v = orbital_velocity(altitude_m)
     esc_v  = escape_velocity(altitude_m)
+    tolerance = 1e-3
+    relative_error = abs(velocity_ms - circ_v) / circ_v
 
     if velocity_ms < 0.95 * circ_v:
         return "suborbital"         # will crash
-    elif velocity_ms < 1.05 * circ_v:
+    elif relative_error < tolerance:
         return "circular"           # roughly circular
     elif velocity_ms < esc_v:
         return "elliptical"         # ellipcatial orbit
