@@ -34,6 +34,17 @@ def acceleration(position):
     r = np.linalg.norm(position)
     return -GM * position / r**3
 
+
+def eccentricity(position, velocity):
+    h = np.cross(position, velocity) # specific angular momentum, its h = r x v
+    h_mag = np.linalg.norm(h)
+    energy = orbital_energy(position, velocity)
+
+    e = np.sqrt(1 + ((2 * energy * h**2) / (GM**2))) # eccentricity formula based on specific angular momentum
+
+
+
+
 def rk4_step(position, velocity, dt):
     """
     Single RK4 integration step.
